@@ -10,7 +10,7 @@ definePageMeta({
 })
 
 
-const {pending, data, error} = await useFetch(`http://www.omdbapi.com/?apikey=bfab315d&i=${id}`, {
+const {pending, data, error} = await useFetch(`https://www.omdbapi.com/?apikey=bfab315d&i=${id}`, {
   key: id,
 
   async onResponse({request, response}) {

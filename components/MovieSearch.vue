@@ -34,7 +34,7 @@ async function search( page) {
     // const {
     //   pending,
     //   data
-    // } = await useLazyFetch(`http://www.omdbapi.com/?apikey=bfab315d&s=${useMovies.value.query}`, {key: useMovies.value.query})
+    // } = await useLazyFetch(`https://www.omdbapi.com/?apikey=bfab315d&s=${useMovies.value.query}`, {key: useMovies.value.query})
 
     const {pending, data, refresh, error} = await useFetch(`/api/movies`, {
       key: useMovies.value.query,
