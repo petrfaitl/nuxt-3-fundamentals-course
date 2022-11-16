@@ -1,5 +1,5 @@
 
-const router = useRouter();
+// const router = useRouter();
 
 export const useUser = defineStore("user", {
   state: () => {
@@ -11,12 +11,12 @@ export const useUser = defineStore("user", {
   actions: {
     login() {
       this.isLoggedIn = true;
-      router.push("/movies");
+      useRouter().push("/movies");
 
     },
     logout() {
       this.isLoggedIn = false;
-      router.push("/login");
+      useRouter().push("/login");
 
     }
   }
