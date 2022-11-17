@@ -9,6 +9,7 @@ const user = useUser();
     <nav class="">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/movies">Movies</NuxtLink>
+      <NuxtLink to="/vueuse">VueUse</NuxtLink>
       <NuxtLink to="/teams/my-team/users/111">My Team Page</NuxtLink>
       <NuxtLink to="https://vueschool.io/lessons/nuxtlink-for-navigation">Vue School</NuxtLink>
       <div>

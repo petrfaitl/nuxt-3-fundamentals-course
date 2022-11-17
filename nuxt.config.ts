@@ -4,12 +4,18 @@ export default defineNuxtConfig({
     ["@pinia/nuxt",
       {
         autoImports: ["defineStore", "acceptHMRUpdate"],
-      }], '@nuxtjs/tailwindcss'],
+      }],
+    '@nuxtjs/tailwindcss'],
   imports: {
     dirs: ["stores"],
   },
   app: {
     pageTransition: {name: 'page', mode: 'out-in'}
+  },
+  routeRules:{
+    "/":{swr:true},
+    "/teams":{static:true}
+
   }
 })
 
