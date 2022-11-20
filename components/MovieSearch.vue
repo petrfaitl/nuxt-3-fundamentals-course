@@ -24,12 +24,12 @@ function next() {
   search(useMovies.value.page);
 }
 
-function pageno(page) {
+function pageno(page: number) {
   useMovies.value.page = page;
   search(page);
 }
 
-async function search( page) {
+async function search( page: number) {
   if (useMovies.value.query) {
     // const {
     //   pending,

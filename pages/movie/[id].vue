@@ -1,9 +1,13 @@
 <script async setup>
 
+import {useClipboard} from "@vueuse/core";
+
 const movie = ref("");
 const route = useRoute();
 const router = useRouter();
 const id = route.params.id;
+
+const {copy , copied} = useClipboard();
 
 definePageMeta({
   middleware: 'auth',
@@ -43,9 +47,18 @@ if (data.value) {
       <a href="#" @click.prevent="router.go(-1)">&lt; Back to search</a>
     </div>
     <div v-if="!pending && movie.value" class="flex flex-col">
-      <h1 class="text-3xl my-8">
-        {{ movie.value.Title }} ({{ movie.value.Year }})
-      </h1>
+      <div class="flex gap-4 my-8">
+      <h1 class="text-3xl">
+        {{ movie.value.Title }} ({{ movie.value.Year }})</h1> <button class="text-teal-600 hover:text-teal-800" @click='copy(`${movie.value.Title} (${movie.value.Year})`)'><span v-if="copied">Copied!</span> <span v-else>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6" />
+</svg>
+
+
+      </span>
+      </button>
+      </div>
+
       <div class="flex flex-col gap-4">
         <div class="flex gap-8">
 

@@ -9,11 +9,15 @@ const credentials = reactive({
 definePageMeta({
   layout:"plain",
 })
+
+useHead({
+  title: "Login"
+})
 </script>
 
 <template>
   <div class="flex mx-auto justify-center w-[450px] h-screen items-center" >
-    <form @submit.prevent="user.login()" class="flex flex-col gap-4 w-full bg-slate-200 p-16 rounded-xl shadow">
+    <form @submit.prevent="user.login()" class="flex flex-col gap-4 w-full bg-slate-200 dark:bg-slate-600 p-16 rounded-xl shadow">
       <label for="username">
         Username
       </label>
@@ -23,7 +27,7 @@ definePageMeta({
       </label>
         <input type="password" autocomplete="current-password" name="password" id="password" placeholder="Enter password" v-model="credentials.password">
       <div class="mt-8">
-        <button type="submit" class="px-4 py-3 bg-teal-300 rounded w-full text-teal-900 hover:shadow-lg transition-all">Login</button>
+        <button type="submit" class="btn-submit w-full">Login</button>
       </div>
     </form>
   </div>
@@ -35,7 +39,5 @@ definePageMeta({
 input{
   @apply px-4 py-3 rounded shadow;
 }
-label{
-  ;
-}
+
 </style>

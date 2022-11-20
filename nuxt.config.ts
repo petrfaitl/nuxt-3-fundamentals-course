@@ -14,7 +14,9 @@ export default defineNuxtConfig({
   },
   routeRules:{
     "/":{swr:true},
-    "/teams":{static:true}
+    "/teams":{static:true},
+    "/vueuse":{ssr: false},
+    "/infinitescroll":{ssr:false},
 
   }
 })
