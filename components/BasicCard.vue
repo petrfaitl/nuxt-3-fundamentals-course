@@ -4,7 +4,7 @@ const {title, description, src} = defineProps(['src', 'title', 'description'])
 </script>
 
 <template>
-  <div class="bg-white rounded-xl border flex flex-col overflow-hidden hover:shadow-lg hover:scale-[101%] transition-scale duration-150">
+  <div class="bg-white dark:bg-teal-900 rounded-xl border flex flex-col overflow-hidden hover:shadow-lg hover:scale-[101%] transition-scale duration-150">
     <div class="w-full h-[150px] overflow-y-hidden">
       <img :src="src" :alt="title" class="w-full">
     </div>

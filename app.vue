@@ -35,7 +35,7 @@ useHead({
   }
 
   button {
-    @apply px-4 py-3 rounded  hover:shadow-lg transition-all;
+    @apply px-4 py-3 rounded  hover:shadow-lg active:shadow transition-all;
   }
 
   ::placeholder {
@@ -47,6 +47,10 @@ useHead({
 
   nav {
     @apply p-2 md:p-8 bg-teal-50 flex gap-2 md:gap-4 dark:bg-teal-900;
+  }
+  .nav-dropdown {
+    @apply bg-teal-50;
+
   }
 }
 
