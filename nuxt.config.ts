@@ -22,7 +22,8 @@ export default defineNuxtConfig({
   },
   alias:
     {
-      video: fileURLToPath(new URL('./public/video/', import.meta.url)),
+      video: fileURLToPath(new URL('/video/', import.meta.url)),
+      images: fileURLToPath(new URL('/images/', import.meta.url)),
     }
 })
 
