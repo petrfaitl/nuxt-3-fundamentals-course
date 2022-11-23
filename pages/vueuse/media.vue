@@ -6,7 +6,7 @@ const video  = ref(null);
 const {stream, enabled} = useDisplayMedia();
 
 const video2 = ref(null);
-const {playing, currentTime, duration, volume} =  useMediaControls(video2, {src:'video/video.mp4'})
+const {playing, currentTime, duration, volume} =  useMediaControls(video2, {src:'/video/video.mp4'})
 
 
 watchEffect(()=>{
@@ -16,6 +16,9 @@ watchEffect(()=>{
 })
 onMounted(()=>{
   volume.value = 0.5;
+})
+useHead({
+  title: "Media",
 })
 </script>
 

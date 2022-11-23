@@ -17,13 +17,8 @@ export default defineNuxtConfig({
   routeRules:{
     "/":{swr:true},
     "/teams":{static:true},
-    "/vueuse":{ssr: false},
-    "/infinitescroll":{ssr:false},
-  },
-  alias:
-    {
-      video: fileURLToPath(new URL('/video/', import.meta.url)),
-      images: fileURLToPath(new URL('/images/', import.meta.url)),
-    }
+    "/vueuse/**":{ssr: false},
+
+  }
 })
 

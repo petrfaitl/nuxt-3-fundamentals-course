@@ -11,7 +11,6 @@ import {
 } from '@vueuse/core';
 
 const title = useTitle();
-// console.log(title.value)
 title.value = "VueUse demo page";
 
 const position = ref({x: 10, y: 0});

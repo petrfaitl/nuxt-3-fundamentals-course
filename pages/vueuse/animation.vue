@@ -1,15 +1,22 @@
 <script lang="ts" setup>
 
 import {useInterval, useRafFn} from "@vueuse/core";
+import {useTitle} from "@vueuse/core";
+
+const title = useTitle();
+title.value = "Vueuse Animation";
 
 const {counter, pause, resume, isActive} = useInterval(100, {controls:true});
-console.log(counter, isActive)
-const frame = ref(-75);
+// console.log(counter, isActive)
+const frame = ref();
+const framesComplete = ref(0);
+const speed = ref(5);
 
-const {pause:pauseAnimation, resume:resumeAnimation} = useRafFn(()=>{
- if (frame.value % 5) return;
+const {pause:pauseAnimation, resume:resumeAnimation, isActive: isActiveAnimation} = useRafFn(()=>{
+ framesComplete.value ++;
+  if (framesComplete.value % speed.value) return;
  if(frame.value > -525) {
-   frame.value -= -75;
+   frame.value -= 75;
  }else{
    frame.value = 0;
  }
@@ -29,9 +36,16 @@ const {pause:pauseAnimation, resume:resumeAnimation} = useRafFn(()=>{
     <button  @click="counter = 0" class="btn-submit w-[250px]">Reset</button>
 
   </div>
+    <div class="border"></div>
   </div>
     <div class="flex flex-col gap-8 my-8">
-      <div class="sprite"></div>
+      <div class="flex gap-4">
+      <button @click="isActiveAnimation?pauseAnimation():resumeAnimation()" class="btn-submit w-[250px]">{{ isActiveAnimation?"Pause":"Resume"}}</button>
+        <button @click="(speed>0)? speed--:''" class="btn-submit">+</button>
+        <div class="flex items-center">{{Math.floor(1/speed*100)}}</div>
+        <button @click="(speed>=0)? speed++:''" class="btn-submit">-</button>
+      </div>
+        <div class="sprite"></div>
     </div>
 
   </component>

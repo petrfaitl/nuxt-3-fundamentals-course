@@ -17,7 +17,7 @@ useHead({
 
 <template>
   <div class="flex mx-auto justify-center w-[450px] h-screen items-center" >
-    <form @submit.prevent="user.login()" class="flex flex-col gap-4 w-full bg-slate-200 dark:bg-slate-600 p-16 rounded-xl shadow">
+    <form @submit.prevent="user.login()" class="flex flex-col gap-4 w-full bg-teal-100 dark:bg-teal-900 p-16 rounded-xl shadow">
       <label for="username">
         Username
       </label>

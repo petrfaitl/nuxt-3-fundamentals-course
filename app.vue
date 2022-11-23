@@ -4,9 +4,8 @@
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | My Movie Search` : `My Movie Search`
+    return titleChunk ? `${titleChunk} | My Movie Search` : `My Demo Site`
   }
-
 })
 </script>
 <template>
@@ -17,65 +16,6 @@ useHead({
 
 </template>
 <style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@layer base {
-  body {
-    font-family: sans-serif;
-    @apply text-slate-600 bg-slate-50 dark:text-slate-50 dark:bg-slate-900
-  }
 
-  a, .link {
-    @apply px-4 py-3 hover:shadow-none text-teal-600 active:text-teal-800 hover:underline dark:text-teal-300 dark:active:text-teal-500
-  }
-  h2{
-    @apply my-4;
-  }
-
-  button {
-    @apply px-4 py-3 rounded  hover:shadow-lg active:shadow transition-all;
-  }
-
-  ::placeholder {
-    @apply dark:text-slate-600;
-  }
-  input{
-    @apply dark:text-slate-600;
-  }
-
-  nav {
-    @apply p-2 md:p-8 bg-teal-50 flex gap-2 md:gap-4 dark:bg-teal-900;
-  }
-  .nav-dropdown {
-    @apply bg-teal-50;
-
-  }
-}
-
-@layer components {
-  .btn-submit {
-    @apply bg-teal-500 text-teal-50;
-  }
-
-  .router-link-active {
-    color: red;
-  }
-
-  .router-link-exact-active {
-    @apply text-teal-900 dark:text-teal-50;
-  }
-
-  .page-enter-active,
-  .page-leave-active {
-    @apply transition;
-  }
-
-  .page-enter-from,
-  .page-leave-to {
-    opacity: 0;
-    filter: blur(1rem);
-  }
-}
 </style>

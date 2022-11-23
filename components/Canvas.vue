@@ -11,7 +11,7 @@ const {height, width} = defineProps(['height', 'width']);
 onMounted(()=>{
   canvas.value.height = height;
   canvas.value.width = width;
-  console.log(canvas)
+  // console.log(canvas)
 })
 
 

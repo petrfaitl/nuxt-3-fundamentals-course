@@ -1,23 +1,29 @@
 
-// const router = useRouter();
 
 export const useUser = defineStore("user", {
   state: () => {
     return {
       isLoggedIn: false,
+      fromPath: "",
     }
   },
   getters: {},
   actions: {
     login() {
       this.isLoggedIn = true;
-      useRouter().push("/movies");
+      if(this.fromPath !== "/login"){
+        navigateTo({path: this.fromPath});
+      }else {
+        useRouter().push("/movies");
+      }
 
     },
     logout() {
       this.isLoggedIn = false;
       useRouter().push("/login");
-
+    },
+    setFromPath(url){
+      this.fromPath = url;
     }
   }
 })
