@@ -27,11 +27,11 @@ watch(ready, () => {
 
   <Teleport to="body">
     <Transition appear>
-      <div v-if="!ready"
+      <div v-if="!ready && message"
            class="fixed w-full max-w-max z-50  inset-x-1/2 -translate-x-1/2 top-2 shadow-xl  px-4 py-3 bg-teal-300 dark:bg-teal-600 rounded-md flex gap-12 content-center">
         <div class="flex content-center">
           <div class="">
-            {{ notification.message }}
+            {{ message }}
           </div>
         </div>
         <div @click.capture="stop()"

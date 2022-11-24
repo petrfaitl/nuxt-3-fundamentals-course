@@ -60,10 +60,9 @@ watch(route, () => {
 
       <NuxtLink to="/teams/my-team/users/111">My Team Page</NuxtLink>
       <!--      <NuxtLink to="https://vueschool.io/lessons/nuxtlink-for-navigation">Vue School</NuxtLink>-->
-      <div class="link">
         <NuxtLink to="/login" v-if="!user.isLoggedIn">Login</NuxtLink>
-        <a href="#" @click.prevent="user.logout" v-else class="">Logout</a>
-      </div>
+        <NuxtLink :to="{path:'logout'}" v-else>Logout</NuxtLink>
+<!--        <a href="#" @click.prevent="user.logout" v-else class="">Logout</a>-->
       <div class="ml-auto justify-self-end">
         <button @click="toggleDark()" class="btn-submit ">{{ `${isDark ? "Light" : "Dark"}` }}</button>
       </div>
