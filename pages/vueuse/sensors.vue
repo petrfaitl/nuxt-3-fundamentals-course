@@ -38,7 +38,7 @@ const battery = useBattery();
 const online = useOnline();
 const network = useNetwork();
 const {coords, locatedAt, error} = useGeolocation();
-
+console.log(error)
 const scrollBox = ref(null);
 const scroll = useScroll(scrollBox);
 
@@ -87,7 +87,8 @@ const scroll = useScroll(scrollBox);
                 }
           }, null, 2)
 
-        }}</pre>
+        }}
+      error: {{error.message}}</pre>
     </section>
     <div class="border my-4"></div>
     <section class="w-full">

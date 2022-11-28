@@ -53,6 +53,24 @@ watch(route, () => {
               </NuxtLink>
 
             </li>
+            <li>
+              <NuxtLink class="block py-2 px-4 "
+                        to="/vueuse/todo">ToDo (History)
+              </NuxtLink>
+
+            </li>
+            <li>
+              <NuxtLink class="block py-2 px-4 "
+                        to="/vueuse/transition">Transition
+              </NuxtLink>
+
+            </li>
+            <li>
+              <NuxtLink class="block py-2 px-4 "
+                        to="/vueuse/components">Components
+              </NuxtLink>
+
+            </li>
 
           </ul>
         </div>

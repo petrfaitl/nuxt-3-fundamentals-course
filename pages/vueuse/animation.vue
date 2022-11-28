@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 
-import {useInterval, useRafFn} from "@vueuse/core";
+import {useInterval, useRafFn, useTimestamp} from "@vueuse/core";
 import {useTitle} from "@vueuse/core";
 
 const title = useTitle();
 title.value = "Vueuse Animation";
 
-const {counter, pause, resume, isActive} = useInterval(100, {controls:true});
+const {counter, pause, resume, isActive} = useInterval(1000, {controls:true});
 // console.log(counter, isActive)
 const frame = ref();
 const framesComplete = ref(0);
@@ -22,6 +22,21 @@ const {pause:pauseAnimation, resume:resumeAnimation, isActive: isActiveAnimation
  }
 
 });
+
+
+const start = Date.now();
+const timestamp = useTimestamp();
+const secondsPassed = computed(()=>{
+  return Math.floor((timestamp.value - start) /1000);
+})
+
+const hangBrowser = ()=>{
+  const j = 0;
+  for(let i=0; i<100000;i++){
+    console.log(j);
+  }
+
+}
 
 </script>
 
@@ -47,7 +62,13 @@ const {pause:pauseAnimation, resume:resumeAnimation, isActive: isActiveAnimation
       </div>
         <div class="sprite"></div>
     </div>
+    <div class="border"></div>
+    <div class="flex flex-col mx-auto  content-start items-start gap-4 my-8">
+      <span>Interval: {{counter}} </span>
+      <span>Timestamp: {{secondsPassed}} (non blocking code)</span>
 
+      <button @click="hangBrowser" class="btn-submit">Hang Browser</button>
+    </div>
   </component>
 </template>
 
