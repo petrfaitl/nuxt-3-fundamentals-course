@@ -98,7 +98,7 @@ const scroll = useScroll(scrollBox);
       <div>
 
       </div>
-      <button @click.prevent="clearCanvas()" class="btn-submit mb-4">Clear</button>
+      <button @click.prevent="clearCanvas()" class="btn-primary mb-4">Clear</button>
       <div class="w-full h-[250px] border border-slate-200 text-slate-900 dark:border-slate-50">
         <Canvas height="250" width="500" ref="canvas"/>
 

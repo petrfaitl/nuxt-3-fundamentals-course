@@ -37,7 +37,7 @@
 }
 
 @layer components {
-    .btn-submit {
+    .btn-primary {
         @apply bg-teal-500 dark:bg-teal-600 text-teal-50;
     }
 

@@ -8,7 +8,6 @@ const toggleDark = useToggle(isDark);
 const user = useUser();
 const show = ref(false);
 const route = useRoute();
-// console.log(route.name);
 watch(route, () => {
   show.value = false;
 })
@@ -67,6 +66,18 @@ watch(route, () => {
             </li>
             <li>
               <NuxtLink class="block py-2 px-4 "
+                        to="/vueuse/carousel">Carousel
+              </NuxtLink>
+
+            </li>
+            <li>
+              <NuxtLink class="block py-2 px-4 "
+                        to="/vueuse/utilities">Utilities
+              </NuxtLink>
+
+            </li>
+            <li>
+              <NuxtLink class="block py-2 px-4 "
                         to="/vueuse/components">Components
               </NuxtLink>
 
@@ -80,9 +91,8 @@ watch(route, () => {
       <!--      <NuxtLink to="https://vueschool.io/lessons/nuxtlink-for-navigation">Vue School</NuxtLink>-->
         <NuxtLink to="/login" v-if="!user.isLoggedIn">Login</NuxtLink>
         <NuxtLink :to="{path:'logout'}" v-else>Logout</NuxtLink>
-<!--        <a href="#" @click.prevent="user.logout" v-else class="">Logout</a>-->
       <div class="ml-auto justify-self-end">
-        <button @click="toggleDark()" class="btn-submit ">{{ `${isDark ? "Light" : "Dark"}` }}</button>
+        <button @click="toggleDark()" class="btn-primary ">{{ `${isDark ? "Light" : "Dark"}` }}</button>
       </div>
     </nav>
     <div class="container mt-16 mx-auto px-8 ">

@@ -25,14 +25,14 @@ useHead({
 <template>
   <component is="div">
   <div class="mx-auto">
-    <button class="btn-submit" @click="enabled = !enabled">Start Screen Share</button>
+    <button class="btn-primary" @click="enabled = !enabled">Start Screen Share</button>
     <div class="border border-teal-600 h-fit my-8 max-h-fit">
     <video ref="video" muted autoplay controls class="w-full" />
     </div>
   </div>
 
   <div class="mx-auto">
-    <button class="btn-submit" @click="playing = !playing"><span v-if="playing">Pause</span><span v-else>Play</span></button>
+    <button class="btn-primary" @click="playing = !playing"><span v-if="playing">Pause</span><span v-else>Play</span></button>
     <div class="border border-teal-600 h-fit my-8 max-h-fit">
       <video ref="video2" controls class="w-full" />
     </div>

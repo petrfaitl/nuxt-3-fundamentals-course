@@ -22,8 +22,8 @@ const reset = _ => {
       <div class="ml-auto">{{Math.floor(animatedWidth)}}</div>
     </div>
     <div class="flex gap-4">
-      <button @click="load" class="btn-submit">Load</button>
-      <button @click="reset" class="btn-submit">Reset</button>
+      <button @click="load" class="btn-primary">Load</button>
+      <button @click="reset" class="btn-primary">Reset</button>
     </div>
   </div>
 </template>

@@ -2,8 +2,9 @@
 
 import {useRefHistory, useTitle} from "@vueuse/core";
 
-const title = useTitle();
-title.value = "Todo";
+useHead({
+  title: "To Do"
+});
 
 
 const todos = ref<string[]>([]);
@@ -23,9 +24,9 @@ const addToDo = _ => {
   <div>
     <div class="flex gap-4 mb-8">
       <input v-model="item" type="text" class="w-[350px] px-4 py-2.5 border rounded" placeholder="Enter a new todo"/>
-      <button @click="addToDo" class="btn-submit">Create Todo</button>
-      <button @click="undo" class="btn-submit">Undo</button>
-      <button @click="redo" class="btn-submit">Redo</button>
+      <button @click="addToDo" class="btn-primary">Create Todo</button>
+      <button @click="undo" class="btn-primary">Undo</button>
+      <button @click="redo" class="btn-primary">Redo</button>
     </div>
     <div v-show="todos.length>0" class="m-4">
       <h2 class="font-bold capitalize">To Dos:</h2>

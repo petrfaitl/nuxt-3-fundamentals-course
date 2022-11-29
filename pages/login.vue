@@ -27,7 +27,7 @@ useHead({
       </label>
         <input type="password" autocomplete="current-password" name="password" id="password" placeholder="Enter password" v-model="credentials.password">
       <div class="mt-8">
-        <button type="submit" class="btn-submit w-full">Login</button>
+        <button type="submit" class="btn-primary w-full">Login</button>
       </div>
     </form>
   </div>
